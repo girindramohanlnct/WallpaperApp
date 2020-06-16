@@ -1,0 +1,13 @@
+.spacer {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    background-color : #1c113d;
+}
+
+nav > a {
+    font-size: medium;
+    font-weight: bold;
+}

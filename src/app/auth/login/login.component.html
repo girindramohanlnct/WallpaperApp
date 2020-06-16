@@ -1,0 +1,31 @@
+<div class="login">
+  <h3>Login Form</h3>
+  <div class="form1">
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm">
+      <span class="label label-default">EmailId</span>
+      <input
+        name="email"
+        ngModel
+        type="email"
+        required
+        class="form-control"
+        #emailInput="ngModel"
+        placeholder="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+
+      <span class="label label-default">Password</span>
+      <input
+        name="password"
+        ngModel
+        type="password"
+        #passwordInput="ngModel"
+        required
+        class="form-control"
+        placeholder="Recipient's username"
+        aria-describedby="basic-addon2"
+      />
+      <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+  </div>
+</div>

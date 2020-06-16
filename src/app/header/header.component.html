@@ -1,0 +1,93 @@
+<!-- <mat-toolbar class="first">
+    <a id="text2" mat-button routerLink="/home" routerLinkActive="mat-accent">GirindraMohan</a>
+</mat-toolbar>
+<mat-toolbar class="second" color="primary">
+    <span>
+        <a routerLink="/" routerLinkActive="router-link-active">MyMessages</a>
+    </span>
+    <span class="spacer"></span>
+    <ul>
+        <li *ngIf="userIsAuthenticated">
+            <a mat-button routerLinkActive="mat-accent" routerLink="/create">New Post</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated">
+            <a mat-button routerLinkActive="mat-accent" routerLink="/login">Login</a>
+        </li>
+        <li *ngIf="!userIsAuthenticated">
+            <a mat-button routerLinkActive="mat-accent" routerLink="/signup">Signup</a>
+        </li>
+        <li *ngIf="userIsAuthenticated">
+            <button mat-button (click)="onLogout()">Logout</button>
+        </li>
+    </ul>
+</mat-toolbar> -->
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button
+        type="button"
+        class="navbar-toggle collapsed"
+        data-toggle="collapse"
+        data-target="#bs-example-navbar-collapse-1"
+        aria-expanded="false"
+      >
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">InviCia</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="active">
+          <a routerLinkActive="mat-accent" routerLink="/home"
+            >Home <span class="sr-only">(current)</span></a
+          >
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a
+            *ngIf="!userIsAuthenticated"
+            routerLinkActive="mat-accent"
+            routerLink="/"
+            >Login</a
+          >
+        </li>
+        <li>
+          <a
+            *ngIf="!userIsAuthenticated"
+            routerLinkActive="mat-accent"
+            routerLink="/signup"
+            >Signup</a
+          >
+        </li>
+        <li>
+          <a
+            *ngIf="userIsAuthenticated"
+            routerLinkActive="mat-accent"
+            routerLink="/favs"
+            >Favourite</a
+          >
+        </li>
+        <li>
+          <a *ngIf="userIsAuthenticated" (click)="onLogout()">Logout</a>
+        </li>
+        <li>
+          <a
+            routerLink="/home"
+            *ngIf="userIsAuthenticated && userName"
+            routerLinkActive="mat-accent"
+            >Hi , {{ userName }}
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+  </div>
+  <!-- /.container-fluid -->
+</nav>

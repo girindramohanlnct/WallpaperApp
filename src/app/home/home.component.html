@@ -1,0 +1,26 @@
+<div class="row">
+  <div
+    (mouseover)="imageHover(item, item.id, $event)"
+    (mouseout)="imageUnHover()"
+    class="column"
+    *ngFor="let item of item"
+  >
+    <div (click)="addFavourite(item)" class="hh">
+      <img [src]="item.download_url" />
+      <div *ngIf="item.id == itemId" class="sicon">
+        <p>{{ item.author }}</p>
+
+        <span
+          *ngIf="!isFav && item.id == itemId"
+          class="right glyphicon glyphicon-heart-empty"
+        ></span>
+
+        <span
+          *ngIf="isFav && item.id == itemId"
+          style="color: red;"
+          class="right glyphicon glyphicon-heart-empty"
+        ></span>
+      </div>
+    </div>
+  </div>
+</div>

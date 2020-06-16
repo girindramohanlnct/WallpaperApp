@@ -1,0 +1,58 @@
+<div class="login">
+  <h3>Registration Form</h3>
+  <div class="form1">
+    <form [formGroup]="form" (submit)="saveProfile()">
+      <div>
+        <div class="image-preview" *ngIf="imagePreview !== '' && imagePreview">
+          <img [src]="imagePreview" [alt]="form.value.title" />
+        </div>
+        <span class="label label-default">profiel Pic</span>
+        <button mat-stroked-button type="button" (click)="filePicker.click()">
+          Pick Image
+        </button>
+        <input type="file" #filePicker (change)="onImagePicked($event)" />
+      </div>
+
+      <span class="label label-default">EmailId</span>
+      <input
+        formControlName="emailid"
+        type="email"
+        required
+        class="form-control"
+        placeholder="Email"
+        aria-describedby="basic-addon2"
+      />
+
+      <span class="label label-default">Phone No</span>
+      <input
+        type="text"
+        formControlName="phone"
+        required
+        class="form-control"
+        placeholder="Phone No"
+        aria-describedby="basic-addon2"
+      />
+
+      <span class="label label-default">Full Name</span>
+      <input
+        type="text"
+        formControlName="name"
+        required
+        class="form-control"
+        placeholder="Full Name"
+        aria-describedby="basic-addon2"
+      />
+
+      <span class="label label-default">Password</span>
+      <input
+        type="password"
+        formControlName="password"
+        required
+        class="form-control"
+        placeholder="Password"
+        aria-describedby="basic-addon2"
+      />
+      <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+  </div>
+</div>
